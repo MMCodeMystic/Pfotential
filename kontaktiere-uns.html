@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KontakTierheim</title>
+</head>
+<body>
+    <header>
+        <h2>Kontaktiere uns</h2>
+        <img src="kontaktiere.jpeg" alt="Von der Strasse auf die Couch" width="100%" height="80%">
+    </header>
+    <nav>
+        <ul>
+            <li><a href="homepage.html">Start</a></li>
+        </ul>
+    </nav>
+    <main>
+        <article>
+
+            <h2>Kontakt</h2>
+            <p>
+                Schreib uns, ruf an oder komm einfach vorbei –
+                wir helfen dir weiter.
+            </p>
+
+            <form id="kontaktformular" onsubmit="return showInputs(event)">
+
+                <!-- Name -->
+                <label for="name">Name *</label>
+                <input type="text" id="name" name="name" required
+                       placeholder="Dein Vor- und Nachname">
+
+                <!-- Kontaktweg -->
+                <fieldset>
+                    <legend>Kontaktierung via *</legend>
+                    <label><input type="radio" name="kontaktweg" value="email" required> E-Mail</label>
+                    <label><input type="radio" name="kontaktweg" value="telefon"> Telefon</label>
+                </fieldset>
+
+                <!-- E-Mail -->
+                <label for="email">E-Mail *</label>
+                <input type="email" id="email" name="email" required
+                       placeholder="name@beispiel.de">
+
+                <!-- Telefon -->
+                <label for="telefon">Telefonnummer *</label>
+                <input type="tel" id="telefon" name="telefon" required
+                       pattern="(\+49|0)[1-9]\d{2,4}[\s/-]?\d{1,2}[\s/-]?\d{1,2}[\s/-]?\d{1,2}[\s/-]?\d{1,2}[\s/-]?\d{1,2}"
+                       placeholder="+49 123 456789">
+
+                <!-- Thema -->
+                <label for="thema">Thema *</label>
+                <select id="thema" name="thema" required>
+                    <option value="" disabled selected>Bitte wählen …</option>
+                    <option value="spenden">Spenden</option>
+                    <option value="adoption">Adoption</option>
+                    <option value="gassi">Gassi gehen</option>
+                    <option value="mitarbeit">Mitarbeiten</option>
+                    <option value="sonstiges">Sonstiges</option>
+                </select>
+
+                <!-- Nachricht -->
+                <label for="nachricht">Dein Anliegen *</label>
+                <textarea id="nachricht" name="nachricht" rows="5" required
+                          placeholder="Beschreibe kurz, worum es geht …"></textarea>
+
+                <!-- Absenden -->
+                <button type="submit">Absenden</button>
+
+            </form>
+            <!-- Hier erscheint die Ausgabe -->
+            <div id="ausgabe"></div>
+
+            <script>
+                function showInputs(e) {
+                    e.preventDefault();
+
+                    const form = document.getElementById('kontaktformular');
+                    const data = new FormData(form);
+
+                    let html = '<h3>Du hast eingegeben:</h3><ul>';
+                    for (const [key, value] of data.entries()) {
+                        html += `<li><strong>${key}:</strong> ${value}</li>`;
+                    }
+                    html += '</ul>';
+
+                    document.getElementById('ausgabe').innerHTML = html;
+                    return false;
+                }
+            </script>
+
+        </article>
+    </main>
+
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
