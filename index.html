@@ -4,6 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="favicon.ico">
+    <style>
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .popup-content {
+            text-align: center;
+        }
+
+        .popup button {
+            margin-top: 10px;
+        }
+    </style>
     <title>Tierheim</title>
 
 </head>
@@ -16,12 +38,32 @@
         <ul>
             <li><a href="unser-team.html">Unser Team</a></li>
             <li><a href="unsere-tiere.html">Unsere Tiere</a></li>
+            <li><a href="tier_melden.html">Tier anmelden</a></li>
             <li><a href="adoption.html">Adoption</a></li>
             <li><a href="kontaktiere-uns.html">Kontaktiere uns</a></li>
+            <li><a href="registrierung.html">Werde Teil von Pfotential</a></li>
         </ul>
     </nav>
 
     <main>
+        <button onclick="document.getElementById('loginPopup').style.display='block'">Login öffnen</button>
+
+        <div id="loginPopup" class="popup">
+            <div class="popup-content">
+                <h2>Login</h2>
+                <form>
+                    <label for="username">Benutzername:</label>
+                    <input type="text" id="username" name="username" required><br><br>
+
+                    <label for="password">Passwort:</label>
+                    <input type="password" id="password" name="password" required><br><br>
+
+                    <button type="submit">Anmelden</button>
+                    <button type="button" onclick="document.getElementById('loginPopup').style.display='none'">Abbrechen</button>
+                </form>
+            </div>
+        </div>
+
         <article>
 
             <!-- Sektion 1: Willkommen -->
@@ -96,6 +138,8 @@
             </blockquote>
 
         </article>
+
+
     </main>
     <footer>
         <h6>

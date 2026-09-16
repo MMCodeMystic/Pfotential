@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Start</a></li>
+        </ul>
+    </nav>
+    <img src="register.jpeg" alt="Registrierung" width="80%">
+
+</header>
+<main>
+    <h1>Mitgliedschaft im Tierheim</h1>
+
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required placeholder="Dein vollständiger Name"><br><br>
+
+        <label for="email">E-Mail:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="telefon">Telefonnummer:</label>
+        <input type="tel" id="telefon" name="telefon"><br><br>
+
+        <label for="geburtsdatum">Geburtsdatum:</label>
+        <input type="date" id="geburtsdatum" name="geburtsdatum"><br><br>
+
+        <label for="passwort">Passwort:</label>
+        <input type="password" id="passwort" name="passwort" required><br><br>
+
+        <label for="motivation">Warum willst du Mitglied des Tierheims werden?</label><br>
+        <textarea id="motivation" name="motivation" rows="4" cols="50" minlength="20" maxlength="250" required></textarea><br><br>
+
+        <label>Wie willst du helfen? (Mindestens eine Auswahl erforderlich)</label><br>
+        <input type="checkbox" id="gassi" name="hilfe" value="Gassi gehen" required>
+        <label for="gassi">Gassi gehen</label><br>
+        <input type="checkbox" id="fuettern" name="hilfe" value="Tiere füttern">
+        <label for="fuettern">Tiere füttern</label><br>
+        <input type="checkbox" id="reinigen" name="hilfe" value="Käfige und Tierbereiche reinigen">
+        <label for="reinigen">Käfige und Tierbereiche reinigen</label><br>
+        <input type="checkbox" id="it" name="hilfe" value="IT">
+        <label for="it">IT</label><br>
+        <input type="checkbox" id="administrativ" name="hilfe" value="Administrativ">
+        <label for="administrativ">Administrativ</label><br><br>
+
+        <label for="zeit">Wann hast du hauptsächlich Zeit?</label>
+        <select id="zeit" name="zeit" required>
+            <option value="">-- Bitte auswählen --</option>
+            <option value="morgens">Morgens (6 - 10 Uhr)</option>
+            <option value="mittags">Mittags (10 - 14 Uhr)</option>
+            <option value="nachmittags">Nachmittags (14 - 18 Uhr)</option>
+            <option value="abends">Abends (18 - 21 Uhr)</option>
+        </select><br><br>
+
+        <label>Bevorzugter Kontakt:</label><br>
+        <input type="radio" id="email_kontakt" name="kontakt" value="E-Mail" checked>
+        <label for="email_kontakt">E-Mail</label><br>
+        <input type="radio" id="telefon_kontakt" name="kontakt" value="Telefon">
+        <label for="telefon_kontakt">Telefon</label><br><br>
+
+        <button type="submit">Registrierung abschicken</button>
+        <button type="reset">Eingabe zurücksetzen</button>
+    </form>
+</main>
+<footer>
+    <h6>Copyright 2026 M.Meier</h6>
+</footer>
+
+</body>
+</html>
