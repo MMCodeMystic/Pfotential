@@ -1,0 +1,45 @@
+* {
+    border: darkgreen solid 1px;
+}
+
+/* 1. Am häufigsten: am body setzen – wird von allen Kind-Elementen geerbt */
+/* Für das gesamte Dokument */
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* für konkrete Elemente*/
+h1 {
+    text-align: center;
+    font-family: "Bauhaus 93", cursive;
+
+}
+
+/*über die ID*/
+#alter {
+    color: red;
+}
+
+/* über Klasse ansprechen*/
+.subtitle {
+    color: blue;
+}
+/* Nachbarn ansprechen*/
+
+h2 + p {
+    color: darkblue;
+}
+
+h4 + p {
+    color: darkgreen;
+}
+
+/* Mehrere Selektoren kombinieren*/
+#alter, label {
+    color: black;
+}
+
+#alter.subtitle {
+    color: blue;
+    font-weight: bold;
+}

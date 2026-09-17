@@ -1,7 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
+    <style>
+        label {
+            font-size: 1.1rem;
+            text-align: left;
+            font-weight: bold;
+            background-color: antiquewhite;
+        }
+    </style>
+    <script src="js/validation.js" defer></script>
+    <link rel="stylesheet" href="style.css">
     <title>Title</title>
 </head>
 <body>
@@ -14,7 +24,7 @@
     <img src="neues_tier.jpeg" alt="Neues Tier melden" width="80%">
 </header>
 <main>
-    <h1>Tier melden</h1>
+    <h1 style="background-color: bisque">Tier melden</h1>
     <form method="post" action="">
         <label for="tiername">Name des Tieres:</label>
         <input type="text" id="tiername" name="tiername" required><br><br>
@@ -22,8 +32,41 @@
         <label for="tierart">Art des Tieres:</label>
         <input type="text" id="tierart" name="tierart" required><br><br>
 
+        <label for="bild">Bild des Tieres hochladen:</label>
+        <input type="file" id="bild" name="bild"><br><br>
+
         <label for="alter">Alter:</label>
-        <input type="number" id="alter" name="alter" min="0" required><br><br>
+        <span id="alterWert">40</span><br>
+        <input type="range" id="alter" name="alter" min="0" max="80" step="0.1" required>
+
+        <span id="rangeLabel"></span><br><br>
+
+        <script>
+            const slider = document.getElementById('alter');
+            const display = document.getElementById('alterWert');
+            const rangeLabel = document.getElementById('rangeLabel');
+
+            rangeLabel.textContent = `(${slider.min} – ${slider.max})`;
+            display.textContent = slider.value;
+
+            slider.addEventListener('input', function() {
+                display.textContent = this.value;
+            });
+        </script>
+
+        <label for="farbe">Farbe des Tieres:</label>
+        <input type="color" id="farbe" name="farbe"><br><br>
+
+        <h3>Geschlecht</h3>
+        <input type="radio" id="g-weiblich" name="geschlecht" value="weiblich" required>
+        <label for="g-weiblich">Weiblich</label>
+
+        <input type="radio" id="g-maennlich" name="geschlecht" value="maennlich">
+        <label for="g-maennlich">Männlich</label><br><br>
+
+        <input type="checkbox" id="kastriert" name="kastriert">
+        <label for="kastriert">Kastriert?</label><br><br>
+
 
         <label for="beschreibung">Beschreibung:</label><br>
         <textarea id="beschreibung" name="beschreibung" rows="4" cols="50" required></textarea><br><br>
@@ -31,6 +74,8 @@
         <button type="submit">Absenden</button>
         <button type="reset">Zurücksetzen</button>
     </form>
+
+
 
 </main>
 <footer>
