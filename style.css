@@ -1,18 +1,35 @@
 * {
-    border: darkgreen solid 1px;
+    font-family: "Segoe UI", Arial, sans-serif;
 }
 
 /* 1. Am häufigsten: am body setzen – wird von allen Kind-Elementen geerbt */
 /* Für das gesamte Dokument */
 body {
-    font-family: "Segoe UI", Arial, sans-serif;
+    font-family: "Arial", Helvetica, sans-serif;
+    line-height: 1.5;
+    background-image: url('hintergrund.jpeg');
+    background-size: 100px 100px; /* Kachelgröße steuern */
 }
 
 /* für konkrete Elemente*/
 h1 {
     text-align: center;
-    font-family: "Bauhaus 93", cursive;
+    font-family: "ui-sans-serif", cursive;
 
+}
+
+h2 {
+    margin-top: 1px;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+td {text-align: center}
+
+table{
+    border-collapse: collapse;
+    padding: 5px 5px;
+    margin: 5px 5px 5px 5px;
 }
 
 /*über die ID*/
@@ -24,10 +41,50 @@ h1 {
 .subtitle {
     color: blue;
 }
+
+.tiere {
+    border: 2px solid black;
+    padding: 5px; /* Abstand nach aussen (Inhalt zum Rahmen)*/
+    margin: 10px 10px; /* Abstand zum nächsten Element und zum Seitenrand (Rahmenabstand weiter nach aussen)*/
+}
+
+
+.wichtig {
+    border: 2px solid orangered;
+    padding: 5px;
+    margin: 10px 10px;
+    background-color: burlywood;
+    color: black;
+    font-size: 1.2rem;
+    /*animation: blinker 1s step-start infinite;*/ /*hartes blinken*/
+    animation: pulse 2s ease-in-out infinite;
+    text-shadow:
+            0 0 7px #fff,
+            0 0 10px #ff4444,
+            0 0 21px #ff8822,
+            0 0 42px #ff4444;
+}
+@keyframes blinker {
+    50% { opacity: 0; }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+.name {
+    font: bold 14px/1.5 "ui-sans-serif", cursive;
+}
 /* Nachbarn ansprechen*/
 
 h2 + p {
     color: darkblue;
+    text-shadow:
+            0 0 7px #fff,
+            0 0 10px #39ecd1,
+            0 0 21px #4c5fda,
+            0 0 42px #84e819;
 }
 
 h4 + p {
