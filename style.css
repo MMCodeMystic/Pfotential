@@ -26,6 +26,80 @@ td:nth-child(even) { /*Spalten*/
     background-color: rgba(255,255,255, 0.2);
 }
 
+/* --- Navbar fixiert am oberen Rand --- */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    z-index: 1000;
+}
+
+/* --- Flexbox: Items nebeneinander --- */
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+nav ul > li {
+    position: relative;
+}
+
+
+
+
+nav ul > li > a {
+    display: block;
+    color: #fff;
+    text-decoration: sienna;
+    padding: 14px 24px;
+}
+
+nav ul > li > a:hover {
+    background-color: #555;
+}
+
+
+/* --- Dropdown (versteckt) --- */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f9f9f9;
+    min-width: 180px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,.2);
+}
+
+.dropdown-content li a {
+    display: block;
+    padding: 12px 16px;
+    color: #333;
+    text-decoration: none;
+}
+
+.dropdown-content li a:hover {
+    background-color: #ddd;
+}
+
+/* --- Dropdown beim Hover einblenden --- */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+header {
+    padding-bottom: 50px;
+}
+
 /* 1. Am häufigsten: am body setzen – wird von allen Kind-Elementen geerbt */
 /* Für das gesamte Dokument */
 body {
@@ -72,6 +146,8 @@ p {
 @keyframes slide {
     to { background-position: 200%; }
 }
+
+
 
 /*über die ID*/
 #alter {
