@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const sprueche = [
+                "Diese Seite ist im Freilauf und kommt nicht mehr zurück.",
+                "Unsere Katze hat auf die falsche Taste getippt.",
+                "Diese Seite wurde von einem Hamster gefressen."
+            ];
+            document.getElementById("404-text").textContent =
+                sprueche[Math.floor(Math.random() * sprueche.length)];
+        });
+    </script>
+    <title>Title</title>
+</head>
+<body>
+<header></header>
+<main>
+    <h1>404</h1>
+    <h2>Page not found</h2>
+    <h3>Wau-LAN aktiv?</h3>
+    <img id="404-bild" src="" alt="kein Bild" style="max-width:100%; height:50%;">
+    <p id="404-text"></p>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const eintraege = [
+                { text: "Diese Seite ist im Freilauf und kommt nicht mehr zurück.", bild: "hund-freilauf.png" },
+                { text: "Unsere Katze hat auf die falsche Taste getippt.",          bild: "katze-tastatur.png" },
+                { text: "Diese Seite wurde von einem Hamster gefressen.",           bild: "hamster-futter.png" }
+            ];
+
+            const idx = Math.floor(Math.random() * eintraege.length);
+            document.getElementById("404-text").textContent = eintraege[idx].text;
+            document.getElementById("404-bild").src = eintraege[idx].bild;
+        });
+    </script>
+
+
+</main>
+<footer></footer>
+</body>
+</html>

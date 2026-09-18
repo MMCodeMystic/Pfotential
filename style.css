@@ -56,6 +56,10 @@ table{
     margin: 5px 5px 5px 5px;
 }
 
+thead{
+    border-bottom: #4c5fda 1px solid;
+}
+
 p {
     background: linear-gradient(90deg, red, orange, yellow, green, blue, violet);
     background-size: 200%;
